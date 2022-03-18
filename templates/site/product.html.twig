@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Categorien{% endblock %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block javascripts %}{{ parent() }}{% endblock %}
+{% block body %}
+<h4>Product:</h4>
+<div id="Categories" class="row row-cols-1 row-cols-md-4 g-4">
+    {% if product %}
+        <div class="col">
+            <div class="card">
+            <img src="{{ asset(product.picture) }}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+            </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div id="ProductReviews" class="">
+    {% for reviews in product.reviews %}
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header"><b></b> Sterren: 
+            
+            </div>
+                <h5 class="card-title">{{ reviews.name }}</h5>
+                <p class="card-text">{{ reviews.description }}</p>
+                <p class="card-text">{{ reviews.stars }}</p>
+                <p class="card-text">{{ reviews.date |format_datetime() }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

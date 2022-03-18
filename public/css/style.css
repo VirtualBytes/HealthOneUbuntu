@@ -1,0 +1,24 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+.card-img-top{
+    height: 40%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.card-title{
+    text-align: center;
+}
+
+#Categories{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+ }
